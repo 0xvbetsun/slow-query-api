@@ -18,7 +18,7 @@ jobs:
         with:
           go-version: ${{ matrix.go }}
       - run: "go vet ./..."
-      - run: "go test ./... -coverprofile=coverage.out -covermode=atomic"
+      - run: "go test ./... -coverprofile=coverage.txt -covermode=atomic"
       - uses: dominikh/staticcheck-action@v1.2.0
         with:
           version: "2022.1"
@@ -26,4 +26,3 @@ jobs:
           cache-key: ${{ matrix.go }}
       - name: Upload coverage report
         uses: codecov/codecov-action@v3
-        
