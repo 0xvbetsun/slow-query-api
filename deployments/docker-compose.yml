@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  slow-query-api:
+    container_name: slow-query-api
+    build:
+        context: ../
+        dockerfile: ./build/Dockerfile
+    entrypoint: './slow-query-api'
+    ports:
+      - "8080:8080"
+    environment:
+      PORT: 8080
+      MIN_QUERY_DURATION: ${MIN_QUERY_DURATION}
+      PG_HOST: ${PG_HOST}
+      PG_PORT: ${PG_PORT}
+      PG_USER: ${PG_USER}
+      PG_PASSWORD: ${PG_PASSWORD}
+      PG_DATABASE: ${PG_DATABASE}
