@@ -27,15 +27,15 @@ cp ./deployments/.env.example ./deployments/.env
 
 ### Env variables
 
-| Name              | Value     | Description                       |
-|-------------------|-----------|-----------------------------------|
-|PORT               | 8080      | port for running app              |
-|PG_HOST            | postgres  | host for running DB               |
-|PG_PORT            | 5432      | port for running DB               |
-|PG_USER            | user      | username for DB auth              |
-|PG_PASSWORD        | str0ngPass| pass for DB auth                  |
-|PG_DATABASE        | postgres  | DB name                           |
-|MAX_QUERY_DURATION | 1000      | max query duration in milliseconds|
+| Name               | Value     | Description                       |
+|--------------------|-----------|-----------------------------------|
+|PORT                | 8080      | port for running app              |
+|PG_HOST             | postgres  | host for running DB               |
+|PG_PORT             | 5432      | port for running DB               |
+|PG_USER             | user      | username for DB auth              |
+|PG_PASSWORD         | str0ngPass| pass for DB auth                  |
+|PG_DATABASE         | postgres  | DB name                           |
+|SLOW_QUERY_DURATION | 1000      | max query duration in milliseconds|
 
 ```sh
 docker compose -f ./deployments/docker-compose.yml up -d
