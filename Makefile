@@ -13,7 +13,7 @@ app: ## Run application
 	go run ./cmd/app/main.go
 
 test: ## Runs test for app
-	go test ./... -coverprofile cover.out
+	go test ./... -coverprofile=coverage.out -covermode=atomic
 
 cover: ## Gets percents of code coverage
 	go tool cover -func cover.out | grep total:
